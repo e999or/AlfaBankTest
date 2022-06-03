@@ -25,15 +25,4 @@ public class JsonReader {
             is.close();
         }
     }
-
-    public static void main(String[] args) throws IOException, JSONException {
-        JSONObject json = readJsonFromUrl("https://api.giphy.com/v1/gifs/random?api_key=9ekhBW8jmXb47DiBR65QvezW10qXlszE&tag=rich&rating=g");
-        JSONObject data = json.getJSONObject("data");
-        String idString = data.getString("id");
-        String url = "https://i.giphy.com/" + idString + ".gif";
-        System.out.println(url);
-        SaveGif saveGif = new SaveGif(url);
-
-
-    }
 }
